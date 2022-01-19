@@ -16,7 +16,7 @@ const marp = new Marp({
 // 声明路由
 fastify.post('/marp', (request, reply) => {
   const body = request.body
-  const { html, css, comments } = marp.render(body, { htmlAsArray: true })
+  const { html, css, comments } = marp.render(body.markdown, { htmlAsArray: true })
 
   reply.send({ html: html, css: css, comments: comments })
 })
