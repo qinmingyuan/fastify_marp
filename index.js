@@ -22,7 +22,7 @@ fastify.post('/marp', (request, reply) => {
 })
 
 // 启动服务！
-fastify.listen(4000, (err, address) => {
+fastify.listen(4000, '0.0.0.0', (err, address) => {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
